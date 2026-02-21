@@ -11,9 +11,9 @@ class Solution:
     #     return False
 
     # Using Hash Set and length
-    def run_solution(self, nums):
+    def run_solution(self, input):
         """ Solution Method """
-        array = set(nums)
-        if len(nums) != len(array):
+        array = set(input)
+        if len(input) != len(array):
             return True
         return False
