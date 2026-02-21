@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 current_directory = os.getcwd()
 
 
-def get_file_content(problem_name:str, is_test:bool) -> str:
+def get_file_content(is_test:bool) -> str:
     """ Get the file context need to initilize python files
         The indendation looks weird so that the generated file will pass lint checks.
     """
@@ -32,13 +32,13 @@ class Test:
         \"\"\"Method to test solution\"\"\"
         # Example: arrays.contains_duplicate.contains_duplicate import Solution
         solution_module = importlib.import_module(solution_module_path)
-
+        array = []
         solution_class = solution_module.Solution()
-        result = solution_class.run_solution()
+        result = solution_class.run_solution(array)
         if result is True:
-            logger.info("Test Passed")
+            logger.info("Test Case Passed for %s for %s", problem_name, array)
         elif result is False:
-            logger.error("Test Failed")
+            logger.info("Test Case Failed for %s for %s", problem_name, array)
         else:
             logger.info("The result is %s", result)"""
 
@@ -91,7 +91,7 @@ def main():
                 with open(code_file_name + '.ts',"w", encoding="utf-8") as f:
                     f.write(ts_file_init_content)
                 with open(code_file_name + '.py',"w",  encoding="utf-8") as f:
-                    f.write(get_file_content(problem_name, False))
+                    f.write(get_file_content(False))
             except FileExistsError:
                 logger.error("Files already exist")
 
@@ -100,7 +100,7 @@ def main():
             os.makedirs(test_file_path)
             try:
                 with open(test_file_name+ '.py',"w", encoding="utf-8") as f:
-                    f.write(get_file_content(problem_name, True))
+                    f.write(get_file_content(True))
             except FileExistsError:
                 logger.error("Files already exist")
 
@@ -114,7 +114,7 @@ def main():
         # Example: from arrays.contains_duplicate.test.test_contains_duplicate import Test
         test_module = importlib.import_module(test_module_path)
         test_class = test_module.Test()
-        test_class.test(solution_module_path)
+        test_class.test(solution_module_path, problem_name)
 
     else:
         logger.error("You can either \"init\" or \"test\" your solutions")
