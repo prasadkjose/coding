@@ -66,7 +66,7 @@ python3 run.py test arrays/contains_duplicate
 - Add CLI help command (`--help`)
 - TS Implementation 
 - C++ Implementation
-- Setup Scripts to install dependeciesS
+- Setup Scripts to install dependecies like python3 and nodeJS for TS
 
 
 ---
