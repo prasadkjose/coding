@@ -4,7 +4,9 @@ import logging
 import sys
 import os
 import importlib
+import subprocess
 
+from utils.generator import Generator
 
 # Configure the root logger
 logging.basicConfig(
@@ -15,10 +17,6 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 current_directory = os.getcwd()
-
-
-def get_file_content(is_test:bool) -> str:
-
 
 def main():
     """
@@ -51,40 +49,65 @@ def main():
 
     if mode == "init":
         if not os.path.exists(solution_file_path):
+            generator = Generator()
+
             logger.info("Creating a directory and code files.")
             os.makedirs(solution_file_path)
-
-            ts_file_init_content = ""
 
             # Add the content to the files
             try:
                 with open(code_file_name + '.ts',"w", encoding="utf-8") as f:
-                    f.write(ts_file_init_content)
+                    f.write(generator.get_and_generate_files('TypeScript', False))
                 with open(code_file_name + '.py',"w",  encoding="utf-8") as f:
-                    f.write(get_file_content(False))
+                    f.write(generator.get_and_generate_files('Python',False))
             except FileExistsError:
                 logger.error("Files already exist")
+            except SystemExit:
+                logger.error("Need to provide a programming language")
+
 
             # Init Test files
             logger.info("Setting up test files.")
             os.makedirs(test_file_path)
             try:
                 with open(test_file_name+ '.py',"w", encoding="utf-8") as f:
-                    f.write(get_file_content(True))
+                    f.write(generator.get_and_generate_files('Python', True))
+                with open(test_file_name+ '.ts',"w", encoding="utf-8") as f:
+                    f.write(generator.get_and_generate_files('TypeScript', True))
             except FileExistsError:
                 logger.error("Files already exist")
+            except SystemExit:
+                logger.error("Need to provide a programming language")
 
         else:
             logger.error('Try a new problem. This one already exists!')
 
     elif mode == "test":
+    
+        # PYTHON
+        # Example: from arrays.contains_duplicate.test.test_contains_duplicate import Test
         test_module_path = relative_test_file_name.replace("/",".")
         solution_module_path = relative_solution_file_path.replace("/",".")
-        logger.info("Running Test module from %s",test_module_path)
-        # Example: from arrays.contains_duplicate.test.test_contains_duplicate import Test
+        logger.info("Running Python Test module from %s",test_module_path)
+
         test_module = importlib.import_module(test_module_path)
         test_class = test_module.Test()
         test_class.test(solution_module_path, problem_name)
+        print(problem_name)
+        # TypeScript
+        logger.info("Running TypeScript Test module")
+        result = subprocess.run(
+        ["npx", "ts-node", relative_test_file_name+".ts", problem_name],
+        capture_output=True,
+        text=True,
+        check=False
+        )
+
+        if result.returncode == 0:
+            print("Success:", result.stdout)
+        else:
+            print("Error:", result.stderr)
+
 
     else:
         logger.error("You can either \"init\" or \"test\" your solutions")
