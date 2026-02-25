@@ -61,7 +61,7 @@ python3 run.py test arrays/contains_duplicate
 
 ## TODO
 
-- Take custom test cases
+- Take test cases from a common json or yaml file
 - Add support for benchmarking (time + memory)
 - Add CLI help command (`--help`)
 - TS Implementation 

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES2017", /* or higher, e.g., "ES2020", "ESNext" */
+    "target": "ES2022", /* or higher, e.g., "ES2020", "ESNext" */
     "module": "ESNext", /* or "ES2022", "NodeNext", "System" */
     "moduleResolution": "Node" /* typically needed when using ESNext modules in Node environments */
   }
