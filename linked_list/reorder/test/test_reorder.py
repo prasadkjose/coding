@@ -8,7 +8,7 @@ class Test:
         """Method to test solution"""
         # Example: arrays.contains_duplicate.contains_duplicate import Solution
         solution_module = importlib.import_module(solution_module_path)
-        test_input = ["AAABABB", 2]
+        test_input = [1,2,3,4]
         solution_class = solution_module.Solution()
         result = solution_class.run_solution(test_input)
         if result is True:
