@@ -23,10 +23,10 @@ class Solution:
 
         # while i < j:
         #     node_arr[i].next_node = node_arr[j]
-        #     i += 1            
+        #     i += 1
         #     node_arr[j].next_node = node_arr[i]
         #     j -= 1
-    
+
         # node_arr[i].next_node = None
         # new_list.display()
 
@@ -39,7 +39,7 @@ class Solution:
         while fast and fast.next_node:
             slow = slow.next_node
             fast = fast.next_node.next_node
-            
+
         second = slow.next_node
         first = slow.next_node = None
         while second:
@@ -57,5 +57,3 @@ class Solution:
 
         # print(slow.data, fast.data)
         # new_list.display()
-
-
