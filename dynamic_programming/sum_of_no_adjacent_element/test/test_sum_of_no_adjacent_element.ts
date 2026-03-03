@@ -9,7 +9,8 @@ class Test {
         const { Solution } = await import(solutionClassPath);
         const solutionClass = new Solution()
 
-        const testInput = []
+        const testInput = [[[1, 2, 3, 4, 5],
+                            [6, 7, 8, 9, 10]], 5]
         const result = solutionClass.run_solution(testInput)
         if(result === true) {
             console.log(`Test Case Passed for ${problemName} for ${testInput}`)
