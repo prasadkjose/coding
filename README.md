@@ -68,7 +68,9 @@ python3 run.py test arrays/contains_duplicate
 - C++ Implementation
 - Setup Scripts to install dependecies like python3 and nodeJS for TS
 - Additional language support in an exiting solution
-- A migrator to propogate breaking change to earlier versions. 
-
+- A migrator to propogate breaking change to earlier versions.
+- Add a total number of problems solved. 
+- Report
+- Report/calender generation
 
 ---
