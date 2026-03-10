@@ -64,7 +64,7 @@ python3 run.py test arrays/contains_duplicate
 - Take test cases from a common json or yaml file
 - Add support for benchmarking (time + memory)
 - Add CLI help command (`--help`)
-- TS Implementation 
+- TS Implementation (DONE)
 - C++ Implementation
 - Setup Scripts to install dependecies like python3 and nodeJS for TS
 - Additional language support in an exiting solution
