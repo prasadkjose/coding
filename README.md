@@ -24,7 +24,7 @@ Online judges are great but sometimes you just want:
 - Works locally, no internet required  
 - Language support:
   - Python
-  - JavaScript (TODO)
+  - TypeScript
   - C++ (TODO)
 
 ---
