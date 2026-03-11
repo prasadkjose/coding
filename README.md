@@ -18,10 +18,10 @@ Online judges are great but sometimes you just want:
 
 ## Features
 
-- One folder per problem  
-- Auto-generates solution + test skeletons  
-- Simple test runner from a single entry point  
-- Works locally, no internet required  
+- One folder per problem
+- Auto-generates solution + test skeletons
+- Simple test runner from a single entry point
+- Works locally, no internet required
 - Language support:
   - Python
   - TypeScript
@@ -44,19 +44,49 @@ arrays/
         ├── contains_duplicate.ts
         └── contains_duplicate.cpp
 ```
-    
+
 
 ## Setup a new Problem
 ```bash
 python3 run.py init <problem Path>
 python3 run.py init arrays/contains_duplicate
 ```
-Python script to take the problem name and create .py and .ts files. 
+Python script to take the problem name and create .py and .ts files.
 ## Test
 ```bash
 python3 run.py test <problem Path>
 python3 run.py test arrays/contains_duplicate
 ```
+
+## Requirements
+
+This project requires Python 3.10+ and Node.js for TypeScript support.
+
+### Installation
+
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Install Node.js dependencies (for TypeScript support):
+   ```bash
+   npm install
+   ```
+
+3. Install pre-commit hooks:
+   ```bash
+   pre-commit install
+   ```
+
+## Pre-commit Setup
+### Available Hooks
+
+- **Black**: Python code formatting
+- **Ruff**: Python linting and error detection
+- **isort**: Import sorting
+- **ESLint**: TypeScript/JavaScript linting
+- **Prettier**: Code formatting for TypeScript/JavaScript
 
 
 ## TODO
@@ -69,7 +99,7 @@ python3 run.py test arrays/contains_duplicate
 - Setup Scripts to install dependecies like python3 and nodeJS for TS
 - Additional language support in an exiting solution
 - A migrator to propogate breaking change to earlier versions.
-- Add a total number of problems solved. 
+- Add a total number of problems solved.
 - Report
 - Report/calender generation
 
