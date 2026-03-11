@@ -45,14 +45,17 @@ arrays/
         └── contains_duplicate.cpp
 ```
 
-
 ## Setup a new Problem
+
 ```bash
 python3 run.py init <problem Path>
 python3 run.py init arrays/contains_duplicate
 ```
+
 Python script to take the problem name and create .py and .ts files.
+
 ## Test
+
 ```bash
 python3 run.py test <problem Path>
 python3 run.py test arrays/contains_duplicate
@@ -65,11 +68,13 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 ### Installation
 
 1. Install Python dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 2. Install Node.js dependencies (for TypeScript support):
+
    ```bash
    npm install
    ```
@@ -80,6 +85,7 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
    ```
 
 ## Pre-commit Setup
+
 ### Available Hooks
 
 - **Black**: Python code formatting
@@ -87,7 +93,6 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 - **isort**: Import sorting
 - **ESLint**: TypeScript/JavaScript linting
 - **Prettier**: Code formatting for TypeScript/JavaScript
-
 
 ## TODO
 

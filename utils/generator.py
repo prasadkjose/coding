@@ -1,20 +1,23 @@
-""" Utility module that generates code templates."""
+"""Utility module that generates code templates."""
+
 import logging
 import sys
 
 logger = logging.getLogger(__name__)
 
+
 class Generator:
     """Class to generate language specific templates."""
 
-    def _generate_python_files(self, is_test)->str:
-        """ Get the file context need to initilize python files
+    def _generate_python_files(self, is_test) -> str:
+        """Get the file context need to initilize python files
         The indendation looks weird so that the generated file will pass lint checks.
         """
         if is_test is True:
             return """\"\"\"Testing Module\"\"\"
-import logging
 import importlib
+import logging
+
 logger = logging.getLogger(__name__)
 class Test:
     \"\"\" Test Class \"\"\"
@@ -41,12 +44,12 @@ class Solution:
         return True
 """
 
-    def _generate_typescript_files(self, is_test)->str:
-        """ Method to generate TypeScript files """ 
+    def _generate_typescript_files(self, is_test) -> str:
+        """Method to generate TypeScript files"""
         if is_test is True:
             return """class Test {
     /**
-    * Test runner class. 
+    * Test runner class.
     * @param {string} problemName
     * @return {Promise<void>}
     */
@@ -72,24 +75,23 @@ const testObj: Test = new Test()
 const problemName = process.argv[2]
 await testObj.test(problemName)
 
-// Export an empty module to run the code asynchronously. 
+// Export an empty module to run the code asynchronously.
 export {}"""
 
         return """export class Solution {
     /**
     * @param {string} testInput
-    * @return {any} Returns either boolean to validate the test cases or a custom result. 
+    * @return {any} Returns either boolean to validate the test cases or a custom result.
     */
     run_solution(testInput: any) {
         return true
     }
 }"""
 
-
-    def get_and_generate_files(self, language: str, is_test: bool)->str:
-        """ Determine the language and return the necessary template"""
-        if language == 'Python':
+    def get_and_generate_files(self, language: str, is_test: bool) -> str:
+        """Determine the language and return the necessary template"""
+        if language == "Python":
             return self._generate_python_files(is_test)
-        if language == 'TypeScript':
+        if language == "TypeScript":
             return self._generate_typescript_files(is_test)
         return sys.exit("Need to provide a programming language")

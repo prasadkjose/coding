@@ -9,7 +9,7 @@ class Test {
     const { Solution } = await import(solutionClassPath);
     const solutionClass = new Solution();
 
-    const testInput = ['good', 'morning'];
+    const testInput = [1, 1, 1, 2, 2, 3];
     const result = solutionClass.run_solution(testInput);
     if (result === true) {
       console.log(`Test Case Passed for ${problemName} for ${testInput}`);
