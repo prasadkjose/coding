@@ -1,8 +1,10 @@
 """ Solution Module """
 from collections import Counter
 
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     # def run_solution(self, test_input):
     #     """ Solution Method """
     #     [string1, string2] = test_input
@@ -23,6 +25,6 @@ class Solution:
 
     # Use Python Counters for simpler Space complexity.
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         [string1, string2] = test_input
         return Counter(string1) == Counter(string2)

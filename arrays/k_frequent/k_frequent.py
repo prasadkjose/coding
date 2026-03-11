@@ -2,13 +2,13 @@
 
 
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
 
     def run_solution(self, test_input: list[list[int], int]):
-        """ Solution Method """
+        """Solution Method"""
         [nums, k] = test_input
-        occurance_dict: dict[int, int] = dict()
-        result = list()
+        occurance_dict: dict[int, int] = {}
+        result = []
         for i in nums:
             if i in occurance_dict:
                 occurance_dict[i] += 1

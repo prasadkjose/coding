@@ -1,9 +1,13 @@
 """Testing Module"""
-import logging
 import importlib
+import logging
+
 logger = logging.getLogger(__name__)
+
+
 class Test:
-    """ Test Class """
+    """Test Class"""
+
     def test(self, solution_module_path, problem_name):
         """Method to test solution"""
         # Example: arrays.contains_duplicate.contains_duplicate import Solution

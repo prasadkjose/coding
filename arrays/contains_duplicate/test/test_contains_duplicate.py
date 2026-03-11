@@ -1,16 +1,18 @@
 """Testing Module"""
-import logging
 import importlib
+import logging
 
 logger = logging.getLogger(__name__)
 
+
 class Test:
-    """ Test Class """
+    """Test Class"""
+
     def test(self, solution_module_path, problem_name):
         """Method to test solution"""
         # Example: arrays.contains_duplicate.contains_duplicate import Solution
         solution_module = importlib.import_module(solution_module_path)
-        array = [1,3,4,5]
+        array = [1, 3, 4, 5]
         solution_class = solution_module.Solution()
         result = solution_class.run_solution(array)
         if result is True:

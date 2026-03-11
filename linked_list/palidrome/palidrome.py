@@ -1,15 +1,18 @@
 """ Solution Module """
 from utils.linked_list import LinkedList
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
 
         linked_list = LinkedList()
         for num in test_input:
             linked_list.append(num)
 
-        # Go to the middle and reverse the end. Check start to end one by one. 
+        # Go to the middle and reverse the end. Check start to end one by one.
         head = linked_list.head
 
         slow, fast = head, head
@@ -31,6 +34,6 @@ class Solution:
                 return False
             head = head.next_node
             prev = prev.next_node
-        
+
         linked_list.display()
         return True
