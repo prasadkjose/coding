@@ -1,25 +1,25 @@
 class Test {
-  /**
-   * Test runner class.
-   * @param {string} problemName
-   * @return {Promise<void>}
-   */
-  async test(problemName: string) {
-    const solutionClassPath = `../${problemName}.ts`;
-    const { Solution } = await import(solutionClassPath);
-    const solutionClass = new Solution();
+    /**
+     * Test runner class.
+     * @param {string} problemName
+     * @return {Promise<void>}
+     */
+    async test(problemName: string) {
+        const solutionClassPath = `../${problemName}.ts`;
+        const { Solution } = await import(solutionClassPath);
+        const solutionClass = new Solution();
 
-    const testInput = [[2, 7, 11, 15], 9];
-    // [2,7,11,15], target = 9
-    const result = solutionClass.run_solution(testInput);
-    if (result === true) {
-      console.log(`Test Case Passed for ${problemName} for ${testInput}`);
-    } else if (result === false) {
-      console.log(`Test Case Failed for ${problemName} for ${testInput}`);
-    } else {
-      console.log(`The result is ${result}`);
+        const testInput = [[2, 7, 11, 15], 9];
+        // [2,7,11,15], target = 9
+        const result = solutionClass.run_solution(testInput);
+        if (result === true) {
+            console.log(`Test Case Passed for ${problemName} for ${testInput}`);
+        } else if (result === false) {
+            console.log(`Test Case Failed for ${problemName} for ${testInput}`);
+        } else {
+            console.log(`The result is ${result}`);
+        }
     }
-  }
 }
 
 const testObj: Test = new Test();

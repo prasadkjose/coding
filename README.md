@@ -23,9 +23,9 @@ Online judges are great but sometimes you just want:
 - Simple test runner from a single entry point
 - Works locally, no internet required
 - Language support:
-  - Python
-  - TypeScript
-  - C++ (TODO)
+    - Python
+    - TypeScript
+    - C++ (TODO)
 
 ---
 
@@ -69,20 +69,20 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 
 1. Install Python dependencies:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 2. Install Node.js dependencies (for TypeScript support):
 
-   ```bash
-   npm install
-   ```
+    ```bash
+    npm install
+    ```
 
 3. Install pre-commit hooks:
-   ```bash
-   pre-commit install
-   ```
+    ```bash
+    pre-commit install
+    ```
 
 ## Pre-commit Setup
 
@@ -96,16 +96,16 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 
 ## TODO
 
+- Reset and Remove ALL exisitng solution
 - Take test cases from a common json or yaml file
 - Add support for benchmarking (time + memory)
 - Add CLI help command (`--help`)
 - TS Implementation (DONE)
 - C++ Implementation
 - Setup Scripts to install dependecies like python3 and nodeJS for TS
-- Additional language support in an exiting solution
+- Additional language support in an existing solution
 - A migrator to propogate breaking change to earlier versions.
 - Add a total number of problems solved.
-- Report
 - Report/calender generation
 
 ---

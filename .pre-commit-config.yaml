@@ -1,33 +1,33 @@
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
-    hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: check-yaml
-      - id: check-added-large-files
-      - id: check-merge-conflict
-      - id: debug-statements
-  - repo: local
-    hooks:
-      - id: commit-msg
-        name: Commit Message Convention. Suported prefixes are Solution|Fix|Chore|Docs|Refactor
-        language: pygrep
-        # This entry defines the regex pattern.
-        # The pattern below enforces the Conventional Commits format.
-        # It fails if the pattern is NOT matched, due to the --negate argument.
-        entry: '^(Solution|Fix|Chore|Docs|Refactor)!?(\([a-z]+\))?: (?!Merge).*$'
-        args: [--multiline, --negate]
-        stages: [commit-msg]
+    - repo: https://github.com/pre-commit/pre-commit-hooks
+      rev: v5.0.0
+      hooks:
+          - id: trailing-whitespace
+          - id: end-of-file-fixer
+          - id: check-yaml
+          - id: check-added-large-files
+          - id: check-merge-conflict
+          - id: debug-statements
+    - repo: local
+      hooks:
+          - id: commit-msg
+            name: Commit Message Convention. Suported prefixes are Solution|Fix|Chore|Docs|Refactor
+            language: pygrep
+            # This entry defines the regex pattern.
+            # The pattern below enforces the Conventional Commits format.
+            # It fails if the pattern is NOT matched, due to the --negate argument.
+            entry: '^(Solution|Fix|Chore|Docs|Refactor)!?(\([a-z]+\))?: (?!Merge).*$'
+            args: [--multiline, --negate]
+            stages: [commit-msg]
 
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.5
-    hooks:
-      - id: ruff
-        args: [--fix, --exit-non-zero-on-fix]
+    - repo: https://github.com/astral-sh/ruff-pre-commit
+      rev: v0.15.5
+      hooks:
+          - id: ruff
+            args: [--fix, --exit-non-zero-on-fix]
 
-  - repo: https://github.com/psf/black
-    rev: 26.3.0
-    hooks:
-      - id: black
-        args: [--line-length=88]
+    - repo: https://github.com/psf/black
+      rev: 26.3.0
+      hooks:
+          - id: black
+            args: [--line-length=88]
