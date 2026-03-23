@@ -94,18 +94,21 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 - **ESLint**: TypeScript/JavaScript linting
 - **Prettier**: Code formatting for TypeScript/JavaScript
 
-## TODO
+## Features
 
-- Reset and Remove ALL exisitng solution
-- Take test cases from a common json or yaml file
-- Add support for benchmarking (time + memory)
-- Add CLI help command (`--help`)
-- TS Implementation (DONE)
-- C++ Implementation
-- Setup Scripts to install dependecies like python3 and nodeJS for TS
-- Additional language support in an existing solution
-- A migrator to propogate breaking change to earlier versions.
-- Add a total number of problems solved.
-- Report/calender generation
+| Status | Feature | GitHub Issue |
+|--------|---------|--------------|
+| ✅ | Add pre commit hooks to standardize commit messages | [Completed](https://github.com/prasadkjose/coding/issues/1) |
+| ❌ | Reset and Remove ALL existing solution | [#4](https://github.com/prasadkjose/coding/issues/4) |
+| ❌ | Take test cases from a common JSON or YAML file | [#5](https://github.com/prasadkjose/coding/issues/5) |
+| ❌ | Add support for benchmarking (time + memory) | [#6](https://github.com/prasadkjose/coding/issues/6) |
+| ❌ | Add CLI help command (`--help`) | [#7](https://github.com/prasadkjose/coding/issues/7) |
+| ✅ | TypeScript Implementation | [Completed](https://github.com/prasadkjose/coding/issues/7) |
+| ❌ | C++ Implementation | [#8](https://github.com/prasadkjose/coding/issues/8) |
+| ❌ | Setup Scripts to install dependencies like python3 and nodeJS for TS | [#9](https://github.com/prasadkjose/coding/issues/9) |
+| ❌ | Additional language support in an existing solution | [#10](https://github.com/prasadkjose/coding/issues/10) |
+| ❌ | A migrator to propagate breaking change to earlier versions | [#11](https://github.com/prasadkjose/coding/issues/11) |
+| ❌ | Add a total number of problems solved | [#12](https://github.com/prasadkjose/coding/issues/12) |
+| ❌ | Report/calendar generation | [#13](https://github.com/prasadkjose/coding/issues/13) |
 
 ---
