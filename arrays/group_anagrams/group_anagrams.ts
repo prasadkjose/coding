@@ -1,6 +1,3 @@
-import { hash } from 'node:crypto';
-import * as test from 'node:test';
-
 export class Solution {
     /**
      * @param {string} testInput
