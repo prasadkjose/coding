@@ -1,6 +1,9 @@
-""" Solution Module """
+"""Solution Module"""
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         return True

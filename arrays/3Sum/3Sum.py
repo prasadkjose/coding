@@ -1,11 +1,11 @@
-""" Solution Module """
+"""Solution Module"""
 
 
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
 
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         sorted_arr = sorted(test_input)
         result: [[]] = []
 
@@ -13,7 +13,7 @@ class Solution:
             if val > 0:
                 break
 
-            left = idx+1
+            left = idx + 1
             right = len(sorted_arr) - 1
 
             while left < right:

@@ -1,4 +1,4 @@
-""" Solution Module """
+"""Solution Module"""
 
 
 class Solution:

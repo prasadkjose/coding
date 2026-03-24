@@ -1,18 +1,17 @@
-""" Solution Module """
+"""Solution Module"""
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         # "()"
         # (
-        valid = {
-            '}': '{',
-            ']': '[',
-            ')' : '('
-        }
+        valid = {"}": "{", "]": "[", ")": "("}
         stack = []
         for char in test_input:
-            if len(stack) !=0 and char in valid and stack[-1] == valid[char]:
+            if len(stack) != 0 and char in valid and stack[-1] == valid[char]:
                 stack.pop()
             else:
                 stack.append(char)

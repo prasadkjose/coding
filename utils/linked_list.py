@@ -2,8 +2,7 @@
 
 
 class ListNode:
-    """Linked List Node Class Impl
-    """
+    """Linked List Node Class Impl"""
 
     def __init__(self, data=0, next_node=None):
         self.data = data
@@ -11,8 +10,7 @@ class ListNode:
 
 
 class LinkedList:
-    """Linked List Class Impl
-    """
+    """Linked List Class Impl"""
 
     def __init__(self):
         """Create a new singly-linked list, initially empty."""

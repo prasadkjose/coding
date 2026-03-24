@@ -1,4 +1,5 @@
-""" Solution Module """
+"""Solution Module"""
+
 from collections import Counter
 
 

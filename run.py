@@ -1,4 +1,4 @@
-""" Entry module """
+"""Entry module"""
 
 import importlib
 import logging
@@ -7,6 +7,7 @@ import subprocess
 import sys
 
 from utils.generator import Generator
+from utils.purger import purge_directories
 
 # Configure the root logger
 logging.basicConfig(
@@ -26,29 +27,35 @@ def main():
 
     # Argument Parsing
     mode = sys.argv[1]
-    solution_file_path = sys.argv[2]
-    problem_name = solution_file_path
+    code_file_name = ""
+    test_file_name = ""
+    relative_test_file_name = ""
+    if len(sys.argv) > 2:
+        solution_file_path = sys.argv[2]
+        problem_name = solution_file_path
 
-    # File Path Parsing - Both relative from entry and from home dir.
-    path_arr = solution_file_path.split("/")
-    code_file_path = current_directory + "/" + solution_file_path
-    relative_solution_file_path = solution_file_path
+        # File Path Parsing - Both relative from entry and from home dir.
+        path_arr = solution_file_path.split("/")
+        code_file_path = current_directory + "/" + solution_file_path
+        relative_solution_file_path = solution_file_path
 
-    if len(path_arr) == 1:
-        code_file_name = code_file_path + "/" + solution_file_path
-        relative_solution_file_path = (
-            relative_solution_file_path + "/" + solution_file_path
-        )
-    else:
-        problem_name = path_arr[1]
-        code_file_name = code_file_path + "/" + problem_name
-        relative_solution_file_path = relative_solution_file_path + "/" + problem_name
+        if len(path_arr) == 1:
+            code_file_name = code_file_path + "/" + solution_file_path
+            relative_solution_file_path = (
+                relative_solution_file_path + "/" + solution_file_path
+            )
+        else:
+            problem_name = path_arr[1]
+            code_file_name = code_file_path + "/" + problem_name
+            relative_solution_file_path = (
+                relative_solution_file_path + "/" + problem_name
+            )
 
-    test_file_path = current_directory + "/" + solution_file_path + "/test"
-    test_file_name = test_file_path + "/test_" + problem_name
+        test_file_path = current_directory + "/" + solution_file_path + "/test"
+        test_file_name = test_file_path + "/test_" + problem_name
 
-    relative_test_file_path = solution_file_path + "/test"
-    relative_test_file_name = relative_test_file_path + "/test_" + problem_name
+        relative_test_file_path = solution_file_path + "/test"
+        relative_test_file_name = relative_test_file_path + "/test_" + problem_name
 
     if mode == "init":
         if not os.path.exists(solution_file_path):
@@ -109,6 +116,10 @@ def main():
             print("Success:", result.stdout)
         else:
             print("Error:", result.stderr)
+
+    elif mode == "purge":
+        current_dir = os.getcwd()
+        purge_directories(current_dir)
 
     else:
         logger.error('You can either "init" or "test" your solutions')

@@ -1,9 +1,12 @@
-""" Solution Module """
+"""Solution Module"""
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         [nums, k] = test_input
         sorted_list = sorted(nums)
 
-        return sorted_list[k-1]
+        return sorted_list[k - 1]
