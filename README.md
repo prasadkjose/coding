@@ -99,7 +99,7 @@ This project requires Python 3.10+ and Node.js for TypeScript support.
 | Status | Feature | GitHub Issue |
 |--------|---------|--------------|
 | ✅ | Add pre commit hooks to standardize commit messages | [Completed](https://github.com/prasadkjose/coding/issues/1) |
-| ❌ | Reset and Remove ALL existing solution | [#4](https://github.com/prasadkjose/coding/issues/4) |
+| ✅ | Reset and Remove ALL existing solution | [#4](https://github.com/prasadkjose/coding/issues/4) |
 | ❌ | Take test cases from a common JSON or YAML file | [#5](https://github.com/prasadkjose/coding/issues/5) |
 | ❌ | Add support for benchmarking (time + memory) | [#6](https://github.com/prasadkjose/coding/issues/6) |
 | ❌ | Add CLI help command (`--help`) | [#7](https://github.com/prasadkjose/coding/issues/7) |
