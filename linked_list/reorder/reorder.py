@@ -1,12 +1,13 @@
-""" Solution Module """
+"""Solution Module"""
+
 from utils.linked_list import LinkedList
 
 
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
 
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         new_list = LinkedList()
         for i in test_input:
             new_list.append(i)

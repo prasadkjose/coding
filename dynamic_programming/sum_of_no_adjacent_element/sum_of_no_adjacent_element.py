@@ -1,8 +1,11 @@
-""" Solution Module """
+"""Solution Module"""
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         # [[1, 4, 5], [2, 0 0]]
         [matrix, n] = test_input
 

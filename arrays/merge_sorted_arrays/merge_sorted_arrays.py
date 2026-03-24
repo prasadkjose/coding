@@ -1,8 +1,11 @@
-""" Solution Module """
+"""Solution Module"""
+
+
 class Solution:
-    """ Solution Class """
+    """Solution Class"""
+
     def run_solution(self, test_input):
-        """ Solution Method """
+        """Solution Method"""
         [nums1, nums2, m, n] = test_input
         i = m - 1
         j = n - 1

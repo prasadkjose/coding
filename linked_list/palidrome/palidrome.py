@@ -1,4 +1,5 @@
-""" Solution Module """
+"""Solution Module"""
+
 from utils.linked_list import LinkedList
 
 
